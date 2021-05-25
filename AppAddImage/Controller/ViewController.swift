@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     var button: UIButton!
     
-    // affect choose layout to the boutton
+    // -- Affect choose layout to the boutton
     @IBAction func chooseLayout(_ sender: UIButton) {
         for button in selectedButtons {
             button.isSelected = false
@@ -34,11 +34,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         }
     }
     
-    //    Add image to the button
+    // -- Add image to the button
     @IBAction func addImage(_ sender: UIButton) {
         
-        for ButtontoAddImage in addImageButtons {
-            ButtontoAddImage.isSelected = false
+        for buttontoAddImage in addImageButtons {
+            buttontoAddImage.isSelected = false
         }
         sender.isSelected = true
         switch sender {
@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         }
     }
     
-    //    affect image with UIImageOickerController
+    //    Affect image with UIImageOickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             button.setImage(pickedImage, for: .normal)
@@ -72,64 +72,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         let imageController = UIImagePickerController()
         imageController.delegate = self
         imageController.sourceType = .photoLibrary
-        imageController.allowsEditing = true
+        imageController.allowsEditing = false
         present(imageController, animated: true, completion: nil)
     }
-    //    var orientation: "UIInterfaceOrientation = .landscapeLeft
-    var swipeOrientation: UISwipeGestureRecognizer.Direction = []
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        /* Do any additional setup after loading the view.*/
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeImage(_:)))
-        viewForAddingImage.addGestureRecognizer(swipe)
-        swipe.direction = swipeOrientation
-    }
-    
-    override func didRotate (from fromInterfaceOrientation: UIInterfaceOrientation) {
-        switch fromInterfaceOrientation {
-        case .landscapeLeft, .landscapeRight:
-            swipeOrientation = .left
-        case .portrait,.portraitUpsideDown:
-            swipeOrientation = .up
-        default:
-            break
-        }
-    }
-    
-    // add gesture to view
-    @objc func swipeImage(_ sender : UISwipeGestureRecognizer) {
-        switch sender.direction {
-        case .up:
-            animateImagesWith(tanslation: 0, y: -view.frame.height)
-        case .left:
-            animateImagesWith(tanslation:  -view.frame.width, y: 0)
-        default:
-            break
-        }
-    }
-    
-    //    func to add gesture to View
-    private func animateImagesWith(tanslation x:CGFloat, y:CGFloat) {
-        UIView.animate(withDuration: 0.5, animations:{
-            self.viewForAddingImage.transform = CGAffineTransform(translationX: x, y: y)
-            self.ShareImage()
-        }){(completed) in
-            if completed {
-                self.viewForAddingImage.transform = CGAffineTransform(translationX: -x, y: -y)
-                self.animateBackToCenter()
-            }
-        }
-    }
-    
-    // func to reset view
-    private func animateBackToCenter(){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.viewForAddingImage.transform = .identity
-        }, completion: nil)
-    }
-    
-    //  func to share Image with UIActivitycontroller
+    // -- func to share Image with UIActivitycontroller
     private func ShareImage() {
         let image = image(from: viewForAddingImage)
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -143,5 +89,57 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
     }
+    /*---------------------------------------Swipe Image----------------------------------------*/
+    private var swipe: UISwipeGestureRecognizer!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /* Do any additional setup after loading the view.*/
+        swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeImage(_:)))
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            swipe.direction = .left
+        }else {
+            swipe.direction = .up
+        }
+        viewForAddingImage.addGestureRecognizer(swipe)
+    }
     
+    override func didRotate (from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+            swipe.direction = .left
+        }else {
+            swipe.direction = .up
+        }
+    }
+    
+    // -- add gesture to view
+    @objc func swipeImage(_ sender : UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case .up:
+            animateImagesWith(tanslation: 0, y: -view.frame.height)
+        case .left:
+            animateImagesWith(tanslation:  -view.frame.width, y: 0)
+        default:
+            break
+        }
+    }
+    
+    // -- func to add gesture to View
+    private func animateImagesWith(tanslation x:CGFloat, y:CGFloat) {
+        UIView.animate(withDuration: 0.5, animations:{
+            self.viewForAddingImage.transform = CGAffineTransform(translationX: x, y: y)
+            self.ShareImage()
+        }){(completed) in
+            if completed {
+                self.animateBackToCenter()
+            }
+        }
+    }
+    
+    // -- func to reset view
+    private func animateBackToCenter(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.viewForAddingImage.transform = .identity
+        }, completion: nil)
+    }
 }

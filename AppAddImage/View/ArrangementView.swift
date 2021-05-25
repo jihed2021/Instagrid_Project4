@@ -8,16 +8,15 @@
 import UIKit
 
 class ArrangementView: UIView, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
-
+    
     @IBOutlet var addImageViewUpLeft: UIButton!
     @IBOutlet var addImageViewUpRight: UIButton!
     @IBOutlet var addImageViewDownLeft: UIButton!
     @IBOutlet var addImageViewDownRight: UIButton!
- 
+    
     enum arrangementType {
         case fourImage, twoImageUpOneDown, oneImageUpTwoDown
     }
-
     func setArrangement(_ style: arrangementType) {
         switch style {
         case .fourImage:
@@ -36,9 +35,7 @@ class ArrangementView: UIView, UIImagePickerControllerDelegate,  UINavigationCon
             addImageViewUpRight.isHidden = false
             addImageViewDownLeft.isHidden = false
             addImageViewDownRight.isHidden = true
-     
+            
         }
     }
-   
- 
 }
