@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="342-aj-NCg" userLabel="ViewForAddingImage" customClass="ArrangementView" customModule="Instagrid" customModuleProvider="target">
+                                <rect key="frame" x="57" y="218" width="300" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bQ6-49-z2E" userLabel="StackView">
+                                        <rect key="frame" x="8" y="8" width="284" height="284"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Dd-iy-o2s" userLabel="StackViewUp">
+                                                <rect key="frame" x="0.0" y="0.0" width="284" height="138"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8y-am-pYY" userLabel="addImageViewUpLeft">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="addImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l1G-ly-wfO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-pN-hSb" userLabel="addImageViewUpRight">
+                                                        <rect key="frame" x="146" y="0.0" width="138" height="138"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="addImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fne-qJ-JLB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s9J-zX-PPp" userLabel="StackViewDown">
+                                                <rect key="frame" x="0.0" y="146" width="284" height="138"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBe-7a-zKH" userLabel="addImageViewDownleft">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="addImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r78-Aw-FqK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uva-cz-19b" userLabel="addImageViewDownRight">
+                                                        <rect key="frame" x="146" y="0.0" width="138" height="138"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="addImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cy3-VC-vNo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.062692366540000002" green="0.40002077819999998" blue="0.59600484369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bQ6-49-z2E" firstAttribute="top" secondItem="342-aj-NCg" secondAttribute="top" constant="8" id="4p8-dk-EQJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bQ6-49-z2E" secondAttribute="trailing" constant="8" id="74t-3X-bGN"/>
+                                    <constraint firstAttribute="height" constant="300" id="Fzj-M5-21w"/>
+                                    <constraint firstItem="bQ6-49-z2E" firstAttribute="trailing" secondItem="342-aj-NCg" secondAttribute="trailingMargin" id="Hhl-KH-6cg"/>
+                                    <constraint firstItem="bQ6-49-z2E" firstAttribute="leading" secondItem="342-aj-NCg" secondAttribute="leading" constant="8" id="Mjx-qB-xx3"/>
+                                    <constraint firstItem="bQ6-49-z2E" firstAttribute="leading" secondItem="342-aj-NCg" secondAttribute="leadingMargin" id="NQc-tf-n6I"/>
+                                    <constraint firstAttribute="bottom" secondItem="bQ6-49-z2E" secondAttribute="bottom" constant="8" id="gW1-no-kCY"/>
+                                    <constraint firstAttribute="width" constant="300" id="kBP-rl-oXG"/>
+                                    <constraint firstItem="bQ6-49-z2E" firstAttribute="top" secondItem="342-aj-NCg" secondAttribute="topMargin" id="pXO-Vm-lgl"/>
+                                    <constraint firstItem="bQ6-49-z2E" firstAttribute="bottom" secondItem="342-aj-NCg" secondAttribute="bottomMargin" id="weh-1o-ktA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hhl-KH-6cg"/>
+                                        <exclude reference="NQc-tf-n6I"/>
+                                        <exclude reference="pXO-Vm-lgl"/>
+                                        <exclude reference="weh-1o-ktA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Fzj-M5-21w"/>
+                                        <include reference="kBP-rl-oXG"/>
+                                        <include reference="4p8-dk-EQJ"/>
+                                        <include reference="74t-3X-bGN"/>
+                                        <include reference="Hhl-KH-6cg"/>
+                                        <include reference="NQc-tf-n6I"/>
+                                        <include reference="pXO-Vm-lgl"/>
+                                        <include reference="weh-1o-ktA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="addImageViewDownLeft" destination="FBe-7a-zKH" id="rP2-yr-N83"/>
+                                    <outlet property="addImageViewDownRight" destination="uva-cz-19b" id="1BT-q1-YIi"/>
+                                    <outlet property="addImageViewUpLeft" destination="V8y-am-pYY" id="3Za-Ed-byE"/>
+                                    <outlet property="addImageViewUpRight" destination="6fm-pN-hSb" id="Rwd-fn-a3t"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="260" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-We-5dl">
+                                <rect key="frame" x="137" y="36" width="140.33333333333337" height="42"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Instagrid">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="36" name="ThirstySoftRegular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <attributedString key="attributedText">
+                                        <fragment content="Instagrid">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="36" name="ThirstySoftRegular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="p8i-bn-peM" userLabel="StackViewForStyle">
+                                <rect key="frame" x="79" y="616" width="278" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-dq-yCE" userLabel="chooseStyle2ImageDown">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="1nh-fU-shb"/>
+                                            <constraint firstAttribute="width" constant="80" id="bTC-ta-f34"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Layout 1"/>
+                                        <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="chooseLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z4Z-ol-MoH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bog-wX-ngX" userLabel="chooseStyle4Image">
+                                        <rect key="frame" x="99" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="rKN-GT-Ght"/>
+                                            <constraint firstAttribute="width" constant="80" id="tRk-0s-m0I"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Layout 3"/>
+                                        <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="chooseLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="75M-oO-Rm5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hac-1W-n8h" userLabel="chooseStyle2ImageUp">
+                                        <rect key="frame" x="198" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Msb-5J-WW4"/>
+                                            <constraint firstAttribute="width" constant="80" id="gNI-YF-bRT"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Layout 2"/>
+                                        <state key="selected" image="Selected"/>
+                                        <connections>
+                                            <action selector="chooseLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0T-ju-CDa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bog-wX-ngX" firstAttribute="top" secondItem="p8i-bn-peM" secondAttribute="top" id="LiN-Vl-gKV">
+                                        <variation key="heightClass=compact" constant="99"/>
+                                    </constraint>
+                                    <constraint firstItem="hac-1W-n8h" firstAttribute="top" secondItem="p8i-bn-peM" secondAttribute="top" id="Maf-5C-dFi">
+                                        <variation key="heightClass=compact" constant="198"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="hac-1W-n8h" secondAttribute="bottom" id="cSk-Ug-9ve"/>
+                                    <constraint firstItem="vRF-dq-yCE" firstAttribute="top" secondItem="p8i-bn-peM" secondAttribute="top" id="jbJ-ei-mf2"/>
+                                    <constraint firstAttribute="bottom" secondItem="bog-wX-ngX" secondAttribute="bottom" id="mKE-Lu-inl">
+                                        <variation key="heightClass=compact" constant="99"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="vRF-dq-yCE" secondAttribute="bottom" id="qIe-ld-j4q">
+                                        <variation key="heightClass=compact" constant="198"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" axis="horizontal"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBn-hT-aVW" userLabel="ButtonToSwipe">
+                                <rect key="frame" x="181" y="113" width="52" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="FDd-hC-Ajt"/>
+                                    <constraint firstAttribute="width" constant="52" id="myt-cS-gzB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Arrow Up"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa4-GB-R1P">
+                                <rect key="frame" x="39" y="167.66666666666666" width="336" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mv1-jB-VoK"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Swipe up to share">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="26" name="Delm-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <attributedString key="attributedText">
+                                        <fragment content="Swipe Left to share">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="26" name="Avenir-Book"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.71757525209999995" green="0.84318178889999995" blue="0.89792555569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mBn-hT-aVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="2lR-Ym-VSh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="342-aj-NCg" secondAttribute="bottom" constant="34" id="34v-hw-7ME"/>
+                            <constraint firstItem="cMh-We-5dl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="7EP-AT-whR">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Fa4-GB-R1P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="8OU-uu-yMI"/>
+                            <constraint firstItem="342-aj-NCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8TW-8h-onh"/>
+                            <constraint firstItem="Fa4-GB-R1P" firstAttribute="firstBaseline" secondItem="mBn-hT-aVW" secondAttribute="baseline" constant="43.333333333333314" id="DIF-H7-FuM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cMh-We-5dl" secondAttribute="trailing" constant="225.66666666666663" id="KOu-zZ-fUq"/>
+                            <constraint firstItem="Fa4-GB-R1P" firstAttribute="firstBaseline" secondItem="mBn-hT-aVW" secondAttribute="baseline" constant="39.666666666666664" symbolType="layoutAnchor" id="LM4-l0-jR4">
+                                <variation key="heightClass=compact" constant="62"/>
+                            </constraint>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p8i-bn-peM" secondAttribute="trailing" constant="57" id="UfN-az-v4b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p8i-bn-peM" secondAttribute="bottom" constant="40" id="Ulb-PT-Pkz">
+                                <variation key="heightClass=compact" constant="56"/>
+                            </constraint>
+                            <constraint firstItem="342-aj-NCg" firstAttribute="firstBaseline" secondItem="Fa4-GB-R1P" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="W08-Oz-u8o"/>
+                            <constraint firstItem="342-aj-NCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fa4-GB-R1P" secondAttribute="trailing" symbolic="YES" id="ZYB-XM-bre"/>
+                            <constraint firstItem="p8i-bn-peM" firstAttribute="leading" secondItem="342-aj-NCg" secondAttribute="trailing" constant="46" id="fga-PV-j1f"/>
+                            <constraint firstItem="342-aj-NCg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gAF-a4-xtP"/>
+                            <constraint firstItem="cMh-We-5dl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHV-qE-Io4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fa4-GB-R1P" secondAttribute="bottom" constant="159" id="m3Q-Ys-2Gm">
+                                <variation key="heightClass=compact" constant="164"/>
+                            </constraint>
+                            <constraint firstItem="cMh-We-5dl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="o2R-gI-X2j"/>
+                            <constraint firstItem="mBn-hT-aVW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="181" id="pOk-KR-sgT"/>
+                            <constraint firstItem="Fa4-GB-R1P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="whB-cr-LxU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p8i-bn-peM" secondAttribute="trailing" constant="20" id="xWx-bZ-fRC"/>
+                            <constraint firstItem="mBn-hT-aVW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yJ0-mP-iEE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="34v-hw-7ME"/>
+                                <exclude reference="KOu-zZ-fUq"/>
+                                <exclude reference="m3Q-Ys-2Gm"/>
+                                <exclude reference="xWx-bZ-fRC"/>
+                                <exclude reference="2lR-Ym-VSh"/>
+                                <exclude reference="LM4-l0-jR4"/>
+                                <exclude reference="ZYB-XM-bre"/>
+                                <exclude reference="fga-PV-j1f"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="34v-hw-7ME"/>
+                                <include reference="KOu-zZ-fUq"/>
+                                <exclude reference="UfN-az-v4b"/>
+                                <include reference="m3Q-Ys-2Gm"/>
+                                <include reference="xWx-bZ-fRC"/>
+                                <include reference="2lR-Ym-VSh"/>
+                                <exclude reference="pOk-KR-sgT"/>
+                                <exclude reference="yJ0-mP-iEE"/>
+                                <exclude reference="DIF-H7-FuM"/>
+                                <include reference="LM4-l0-jR4"/>
+                                <exclude reference="whB-cr-LxU"/>
+                                <exclude reference="8TW-8h-onh"/>
+                                <exclude reference="W08-Oz-u8o"/>
+                                <include reference="ZYB-XM-bre"/>
+                                <exclude reference="gAF-a4-xtP"/>
+                                <exclude reference="hHV-qE-Io4"/>
+                                <include reference="fga-PV-j1f"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ViewForAddingImage" destination="342-aj-NCg" id="cst-TG-qLU"/>
+                        <outlet property="viewForAddingImage" destination="342-aj-NCg" id="shZ-GC-mrH"/>
+                        <outletCollection property="selectedButtons" destination="vRF-dq-yCE" collectionClass="NSMutableArray" id="hM4-R8-7ub"/>
+                        <outletCollection property="selectedButtons" destination="bog-wX-ngX" collectionClass="NSMutableArray" id="JaQ-Cj-EbH"/>
+                        <outletCollection property="selectedButtons" destination="hac-1W-n8h" collectionClass="NSMutableArray" id="z9C-C1-GGE"/>
+                        <outletCollection property="addImageButtons" destination="6fm-pN-hSb" collectionClass="NSMutableArray" id="bd1-eN-Psx"/>
+                        <outletCollection property="addImageButtons" destination="V8y-am-pYY" collectionClass="NSMutableArray" id="gxi-FY-FKJ"/>
+                        <outletCollection property="addImageButtons" destination="FBe-7a-zKH" collectionClass="NSMutableArray" id="ham-yi-UY8"/>
+                        <outletCollection property="addImageButtons" destination="uva-cz-19b" collectionClass="NSMutableArray" id="fW9-dq-3xI"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="26.086956521739133" y="66.666666666666671"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Arrow Up" width="4.6666665077209473" height="3.3333332538604736"/>
+        <image name="Layout 1" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 2" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 3" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Plus" width="13.333333015441895" height="13.333333015441895"/>
+        <image name="Selected" width="26.666666030883789" height="26.666666030883789"/>
+    </resources>
+</document>
