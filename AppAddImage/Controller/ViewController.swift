@@ -8,13 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
-    
+    // MARK: - Outlets
     @IBOutlet weak var viewForAddingImage: ArrangementView!
     
     @IBOutlet var selectedButtons: [UIButton]!
     @ IBOutlet var addImageButtons: [UIButton]!
     
+    // MARK: - Properties
     var button: UIButton!
+    
+    // MARK: - Actions
     
     // -- Affect choose layout to the boutton
     @IBAction func chooseLayout(_ sender: UIButton) {
@@ -75,6 +78,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         imageController.allowsEditing = false
         present(imageController, animated: true, completion: nil)
     }
+    
     // -- func to share Image with UIActivitycontroller
     private func ShareImage() {
         let image = image(from: viewForAddingImage)
@@ -89,7 +93,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
     }
-    /*---------------------------------------Swipe Image----------------------------------------*/
+    
+    // MARK: - Swipe
     private var swipe: UISwipeGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
