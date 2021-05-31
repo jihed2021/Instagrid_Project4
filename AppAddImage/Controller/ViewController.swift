@@ -64,7 +64,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     //    Affect image with UIImageOickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            button.imageView?.contentMode = .scaleAspectFill
             button.setImage(pickedImage, for: .normal)
         }
         dismiss(animated: true, completion: nil)
@@ -80,7 +81,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     // -- func to share Image with UIActivitycontroller
-    private func ShareImage() {
+    private func shareImage() {
         let image = image(from: viewForAddingImage)
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
@@ -103,7 +104,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeImage(_:)))
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
             swipe.direction = .left
-        }else {
+        } else {
             swipe.direction = .up
         }
         viewForAddingImage.addGestureRecognizer(swipe)
@@ -112,29 +113,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     override func didRotate (from fromInterfaceOrientation: UIInterfaceOrientation) {
         if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
             swipe.direction = .left
-        }else {
+        } else {
             swipe.direction = .up
         }
     }
     
     // -- add gesture to view
-    @objc func swipeImage(_ sender : UISwipeGestureRecognizer) {
+    @objc func swipeImage(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case .up:
             animateImagesWith(tanslation: 0, y: -view.frame.height)
         case .left:
-            animateImagesWith(tanslation:  -view.frame.width, y: 0)
+            animateImagesWith(tanslation: -view.frame.width, y: 0)
         default:
             break
         }
     }
     
     // -- func to add gesture to View
-    private func animateImagesWith(tanslation x:CGFloat, y:CGFloat) {
-        UIView.animate(withDuration: 0.5, animations:{
+    private func animateImagesWith( tanslation x: CGFloat, y: CGFloat) {
+        UIView.animate(withDuration: 0.5, animations: {
             self.viewForAddingImage.transform = CGAffineTransform(translationX: x, y: y)
-            self.ShareImage()
-        }){(completed) in
+            self.shareImage()
+        }) { (completed) in
             if completed {
                 self.animateBackToCenter()
             }
@@ -142,7 +143,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     // -- func to reset view
-    private func animateBackToCenter(){
+    private func animateBackToCenter() {
         UIView.animate(withDuration: 0.5, animations: {
             self.viewForAddingImage.transform = .identity
         }, completion: nil)

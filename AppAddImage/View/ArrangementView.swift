@@ -14,10 +14,10 @@ class ArrangementView: UIView, UIImagePickerControllerDelegate,  UINavigationCon
     @IBOutlet var addImageViewDownLeft: UIButton!
     @IBOutlet var addImageViewDownRight: UIButton!
     
-    enum arrangementType {
+    enum ArrangementType {
         case fourImage, twoImageUpOneDown, oneImageUpTwoDown
     }
-    func setArrangement(_ style: arrangementType) {
+    func setArrangement(_ style: ArrangementType) {
         switch style {
         case .fourImage:
             addImageViewUpLeft.isHidden = false
